@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% load static %} {% load widget_tweaks %} {% block content %}
+
+<div>
+    <div class="sidebar ">
+        <a class="active " href="{% url 'shop:home' %}">Categories</a>
+        <a href="{% url 'shop:analytical' %}">Analytical</a>
+        <a href="{% url 'shop:chromatography' %}">Chromatography</a>
+        <a href="{% url 'shop:clinical' %}">Clinical</a>
+        <a href="{% url 'shop:laboratory' %}">Laboratory</a>
+        <a href="{% url 'shop:medical' %}">Medical</a>
+        <a href="{% url 'shop:microscopes' %}">Microscopes</a>
+        <a href="{% url 'shop:process' %}">Process</a>
+        <a href="{% url 'shop:semiconductor' %}">SemiConductor</a>
+        <a href="{% url 'shop:spectroscopy' %}">Spectroscopy</a>
+        <a href="{% url 'shop:testmeasurement' %}">Test & Measurement</a>
+        <hr> {% if request.user %} {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %} " class="glyphicon glyphicon-log-out "> Logout</a> {% else %}
+        <a href="{% url 'login' %} " class="glyphicon glyphicon-log-in "> login</a>
+        <a href="{% url 'signup' %} " class="glyphicon glyphicon-registration-mark "> Signup</a> {% endif %} {% endif %}</a>
+
+    </div>
+
+    <!-- Page content -->
+    <div class="content" style="left: 100px; ">
+
+        <div class="container-sm ">
+            <h4 class="page-header ">Clinical Products & Solutions</h4> {% for product in product_list %}
+            <div class="row-one">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-img-actions"> <img src="{{ product.image.url }}" class="card-img img-fluid" width="150" height="150" alt=""> </div>
+                    </div>
+                    <div class="card-body bg-light text-center">
+                        <div class="mb-2">
+                            <h4 class="font-weight-semibold mb-2"> <a href="{{ product.get_absolute_url }}" class="text-default mb-2" data-abc="true">{{ product.name }}</a> </h4>
+                            <a href="#" class="text-muted" data-abc="true">{{ product.category}}</a>
+                        </div>
+                        <h5 class="mb-0 font-weight-semibold">Ksh {% if product.discount_price %} {{product.discount_price|floatformat:2}} {% else %} {{product.price|floatformat:2}} {% endif %}</h5>
+                        <div class="text-muted mb-3"></div><label class="label label-primary">{{ product.label }}</label></div>
+                    <button type="button" class="btn bg-cart"><i class="fa fa-cart-plus mr-2"></i> Add to cart</button>
+                </div>
+            </div> {% endfor %}
+        </div>
+
+    </div>
+</div>{%endblock%}

@@ -1,0 +1,87 @@
+{% extends "base.html" %} {% load static %} {% load widget_tweaks %} {% block content %}
+<main class="mt-5 pt-4">
+    <div class="container-fluid-product">
+
+        <!--Grid row-->
+        <div class="row wow fadeIn">
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+
+                <img src="{{product.image.url}}" class="img-fluid" alt="">
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+
+                <!--Content-->
+                <div class="p-4">
+
+                    <div class="mb-3">
+                        <a href=""><span><h4>{{product.name}}</h4></span></a>
+                        <a href="">
+                            <span class="badge purple mr-1">{{product.get_category}}</span>
+                        </a>
+                        <a href="">
+                            <span class="badge blue mr-1">{{product.label}}</span>
+                        </a>
+
+                    </div>
+
+                    <p class="lead">
+
+                        <span>Ksh {% if product.discount_price %} {{product.discount_price|floatformat:2}} {% else %} {{product.price|floatformat:2}} {% endif %}</span>
+                    </p>
+                    <p class="lead font-weight-bold">{{Product.model}}</p>
+
+                    <p class="lead font-weight-bold">Description</p>
+
+                    <p>{{product.description}}</p>
+
+                    <form class="d-flex justify-content-left">
+                        <!-- Default input -->
+                        <input type="number" value="1" aria-label="Search" class="form-control" style="width: 100px">
+                        <hr>
+                        <a href="{{object.get_add_to_cart}}"></a><button class="btn btn-primary btn-md my-0 p" type="submit">Add to cart
+                <i class="fas fa-shopping-cart ml-1"></i>
+              </button>
+
+                    </form>
+
+                </div>
+                <!--Content-->
+
+            </div>
+            <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <hr>
+
+        <div class="container grid">
+            <div class="container">
+                <p>
+                    <h4>Product Details</h4>
+                </p>
+
+                <p style="padding:15px;">
+                    <h5>{{product.product_details| safe }}</h5>
+                </p>
+
+            </div>
+            <div class="container">
+                <h4>Seller Information</h4>
+                <p>
+                    <h5>
+                        {{product.seller_information}}
+                    </h5>
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</main> {%endblock%}

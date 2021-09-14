@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+h1,
+h2 {
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 10px 0;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: auto;
+    padding: 0 40px;
+}
+
+.inflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box
+}
+
+.content {
+    background: conic-gradient(at 0% 0%, snow, white);
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    border: 1px rgb(177, 175, 175);
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+}
+
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    border: 1px solid rgb(177, 175, 175);
+    background: conic-gradient(at 0% 0%, snow, white);
+    position: absolute;
+    height: 750px;
+    overflow: auto;
+    top: 70px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    font-weight: 200;
+}
+
+.sidebar a.active {
+    background-color: #002643;
+    color: white;
+    font-weight: 600;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: #002643;
+    color: white;
+}
+
+div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: auto;
+}
+
+@media screen and (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+    .sidebar a {
+        float: left;
+    }
+    div.content {
+        margin-left: 0;
+    }
+}
+
+.container-sm {
+    align-content: space-evenly;
+    border: 1px solid rgb(177, 175, 175);
+    border-style: solid;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    margin: 5px;
+    justify-content: center;
+}
+
+.container-flex-product {
+    margin-left: 20px;
+    margin-right: 200px;
+    margin-bottom: 20px;
+    border: 1px solid rgb(177, 175, 175);
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.mt-50 {
+    margin-top: 50px
+}
+
+.mb-50 {
+    margin-bottom: 50px
+}
+
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 200px;
+    height: 400px;
+    padding-top: 7px;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    box-shadow: 0 4px 8px 0 rgb(177, 175, 175);
+    transition: 0.3s;
+    border-radius: 7px;
+}
+
+.row-one {
+    display: inline-block;
+    padding-right: 5px;
+    padding-right: 5px;
+    justify-content: center;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgb(177, 175, 175);
+}
+
+.card-img-actions {
+    position: relative
+}
+
+.card-body {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.card-img {
+    border-radius: 5px;
+}
+
+.label label-primary {
+    background-color: blue;
+}
+
+.star {
+    color: #002643
+}
+
+.bg-cart {
+    background-color: #002643;
+    color: #fff;
+    width: 200px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bg-cart:hover {
+    color: #fff
+}
+
+.bg-cart:hover {
+    color: #fff
+}
+
+.bg-buy {
+    background-color: green;
+    color: #fff;
+    padding-right: 29px
+}
+
+.bg-buy:hover {
+    color: #fff
+}
+
+a {
+    text-decoration: none !important
+}
+
+.container-fluid-product {
+    background: conic-gradient(at 0% 0%, snow, white);
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    border: 1px rgb(177, 175, 175);
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
